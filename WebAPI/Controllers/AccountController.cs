@@ -37,7 +37,7 @@ namespace WebAPI.Controllers
                     // return generated JWT token
                     return Ok(new { token = token });
                 }
-                return BadRequest(model);
+                return Unauthorized(model);
             }
             catch (Exception ex)
             {

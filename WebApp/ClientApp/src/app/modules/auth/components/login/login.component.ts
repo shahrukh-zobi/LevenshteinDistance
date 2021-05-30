@@ -22,14 +22,15 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.authService.login(this.username, this.password).subscribe(response => {
-      this.isError = true;
+      this.isError = false;
+      this.errorMessage = "";
       let token = response.token;
       localStorage.setItem("authToken", token.toString());
       this.router.navigate(['minimum-distance']);
     }, error => {
       this.isError = true;
       if (error.status == 0) {
-        this.errorMessage = "Connection Timeout (API is not up)!"
+        this.errorMessage = "Connection Timeout (API is not up)!";
         return;
       }
       this.errorMessage = "Please enter valid username and password";

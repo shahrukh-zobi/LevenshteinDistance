@@ -95,6 +95,7 @@ strong {
 }
 
 .table tr:last-child td:last-child {
-  color: #ffc107!important;
+  color: #673c30 !important;
   background-color: #ffeeba;
+  font-weight: 600;
 }
