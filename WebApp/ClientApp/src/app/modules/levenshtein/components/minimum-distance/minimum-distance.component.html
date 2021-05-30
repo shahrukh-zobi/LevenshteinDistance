@@ -1,0 +1,51 @@
+<div class="p-4">
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" [checked]="!buttonEnabled"
+            (change)="buttonEnabled = !buttonEnabled" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+            On text change
+        </label>
+    </div>
+</div>
+<div class="content-wrapper pt-5">
+    <div id="app" class="app px-4">
+        <h2 class="text-center mb-2">Levenshtein distance algorithm</h2>
+        <span class="separator bg-warning m-auto d-block"></span>
+        <div class="d-flex align-items-center justify-content-around mt-4 mb-2">
+            <input name="username" [(ngModel)]="sourceString" (input)="CallLevenshtein()" class="form-control"
+                type="text" placeholder="First string" />
+            <div class="px-2">
+                <div class="d-flex align-items-center">
+                    <div><i class="fa fa-chevron-left fa-xs text-coffee"></i></div>
+                    <div class="px-2">
+                        <h5 class="mb-0 text-warning"><b>{{minimumDistance}}</b></h5>
+                    </div>
+                    <div><i class="fa fa-chevron-right fa-xs text-coffee"></i></div>
+                </div>
+            </div>
+            <input name="password" [(ngModel)]="targetString" (input)="CallLevenshtein()" class="form-control"
+                type="text" placeholder="Second string" />
+        </div>
+        <p *ngIf="!sourceString && !targetString" class="text-coffee h6 text-center pt-4">Please enter First Word and
+            Second Word to <br>calculate the Levenshtein distance.</p>
+        <div class="text-center"><button *ngIf="buttonEnabled" class="btn btn-warning mt-4"
+                (click)="CalculateMinimumDistance()">Calculate Levenshtein Distance</button></div>
+        <div class="table-responsive">
+            <table *ngIf="(sourceString || targetString) && listMatrix"
+                class="table table-bordered table-sm text-center mt-4">
+                <tr>
+                    <td width="10%">&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td *ngFor="let char of targetStringArray">{{char}}</td>
+                </tr>
+                <tr *ngFor="let row of listMatrix; let i = index">
+                    <td *ngIf="i == 0">&nbsp;</td>
+                    <td *ngIf="i != 0">{{sourceStringArray[i-1]}}</td>
+                    <td class="field" *ngFor="let field of row">
+                        {{field}}
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,100 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Provide sufficient contrast against white background */
+.content-wrapper {
+  display                : flex;
+  font-family            : 'Open Sans', sans-serif;
+  justify-content        : center;
+  min-height             : 100vh;
+  -webkit-font-smoothing : antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size              : 1rem;
+}
+
+h2 {
+  font-family: 'Crimson Text', serif;
+  font-weight: 600;
+  color      : #673c30;
+}
+
+b,
+strong {
+  font-weight: 600;
+}
+
+.app {
+  max-width: 100%;
+}
+
+.bg-dark {
+  background-color: rgba(0, 0, 0, 0.66) !important;
+}
+
+.text-coffee {
+  color: #673c30;
+}
+
+.bg-coffee {
+  background-color: #673c30 !important;
+}
+
+.bg-coffee-light {
+  background-color: #ffd1c2;
+}
+
+.form-control {
+  background-color: transparent;
+  border          : 0;
+  border-bottom   : solid 1px #dec1b8;
+  border-radius   : 0px;
+  color           : #dec1b8;
+  font-size       : 18px;
+  font-weight     : 700;
+  text-align      : center;
+}
+
+.form-control:focus {
+  border-bottom: solid 1px #673c30;
+  color        : #673c30;
+  outline      : none;
+  box-shadow   : none;
+}
+
+.form-control::placeholder {
+  color: #000;
+}
+
+.table td {
+  color: #000;
+}
+
+.table th {
+  font-weight: 600;
+}
+
+.table-bordered td,
+.table-bordered th {
+  border: 1px solid #8e5a4c;
+}
+
+.separator {
+  width : 60px;
+  height: 2px;
+}
+
+.table tr:first-child td,
+.table tr td:first-child {
+  background-color: #673c30 !important;
+  color           : #fff;
+  font-weight     : 600;
+}
+
+.table tr:nth-child(2) td,
+.table tr td:nth-child(2) {
+  background-color: #ffeeba;
+}
+
+.table tr:last-child td:last-child {
+  color: #ffc107!important;
+  background-color: #ffeeba;
+}
